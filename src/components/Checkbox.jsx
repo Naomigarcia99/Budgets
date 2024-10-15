@@ -17,7 +17,7 @@ const Checkbox = ({ item }) => {
 
   return (
     <div>
-      <input type="checkbox" onChange={handleChange} />
+      <input type="checkbox" onChange={handleChange}/>
       <label className="text-black">Afegueix</label>
       {isChecked && <Web item={item}></Web>}
     </div>

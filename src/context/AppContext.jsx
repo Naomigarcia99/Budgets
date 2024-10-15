@@ -25,19 +25,16 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  const updateInputValue = (productId, inputIndex, value) => {
+  const updateInputValue = (inputIndex, value) => {
     setInputValues((prevValues) => ({
       ...prevValues,
-      [productId]: {
-        ...prevValues[productId],
-        [inputIndex]: value,
-      },
+      [inputIndex]: value,
     }));
   };
 
   useEffect(() => {
     const totalBudget = selectedProducts.reduce((total, product) => {
-      const inputs = inputValues[product.id] || { input1: 0, input2: 0 };
+      const inputs = inputValues || { input1: 0, input2: 0 };
       const inputSum =
         (parseInt(inputs.input1) || 0) + (parseInt(inputs.input2) || 0);
       return total + product.price + inputSum * 30;
