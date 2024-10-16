@@ -2,12 +2,12 @@ import React from "react";
 
 const DecrementButton = ({ value, onChange }) => {
   const handleDecrement = () => {
-    onChange(Math.max(value - 1, 0));
+    onChange(Math.max(value - 1, 1));
   };
 
   return (
     <button
-      className="hover:bg-green-300 rounded-full btn-xs"
+      className="active:bg-green-400 btn-circle btn-xs"
       onClick={handleDecrement}
     >
       -

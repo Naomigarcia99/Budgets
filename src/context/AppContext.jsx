@@ -34,10 +34,17 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const totalBudget = selectedProducts.reduce((total, product) => {
-      const inputs = inputValues || { input1: 0, input2: 0 };
-      const inputSum =
-        (parseInt(inputs.input1) || 0) + (parseInt(inputs.input2) || 0);
-      return total + product.price + inputSum * 30;
+      let updatedTotal = total + product.price;
+
+      if (product.id === "3") {
+        const inputs = inputValues || { input1: 1, input2: 1 };
+        const inputSum =
+          (parseInt(inputs.input1) || 1) + (parseInt(inputs.input2) || 1);
+
+        updatedTotal += inputSum * 30;
+      }
+
+      return updatedTotal;
     }, 0);
 
     setTotalBudget(totalBudget);

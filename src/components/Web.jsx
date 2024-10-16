@@ -21,14 +21,13 @@ const web = () => {
         ></DecrementButton>
         <input
           type="number"
-          value={inputValues.input1 || ""}
+          value={inputValues.input1 || 1}
           onChange={(e) => handleInputChange(e, "input1")}
           className="input input-bordered input-xs w-1/4 [&::-webkit-inner-spin-button]:appearance-none"
-          placeholder="0"
         />
         <IncrementButton
           onChange={(newValue) => updateInputValue("input1", newValue)}
-          value={inputValues.input1 || 0}
+          value={inputValues.input1 || 1}
         ></IncrementButton>
       </div>
       <div className="flex flex-row justify-between">
@@ -39,14 +38,13 @@ const web = () => {
         ></DecrementButton>
         <input
           type="number"
-          value={inputValues.input2 || ""}
+          value={inputValues.input2 || 1}
           onChange={(e) => handleInputChange(e, "input2")}
           className="input input-bordered input-xs w-1/4 [&::-webkit-inner-spin-button]:appearance-none"
-          placeholder="0"
         />
         <IncrementButton
           onChange={(newValue) => updateInputValue("input2", newValue)}
-          value={inputValues.input2 || 0}
+          value={inputValues.input2 || 1}
         ></IncrementButton>
       </div>
     </div>

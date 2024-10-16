@@ -17,8 +17,15 @@ const Checkbox = ({ item }) => {
 
   return (
     <div>
-      <input type="checkbox" onChange={handleChange}/>
-      <label className="text-black">Afegueix</label>
+      <input
+        id={`checkbox-${item.id}`}
+        type="checkbox"
+        onChange={handleChange}
+        className="accent-green-600"
+      />
+      <label htmlFor={`checkbox-${item.id}`} className="text-black">
+        Afegueix
+      </label>
       {isChecked && <Web item={item}></Web>}
     </div>
   );

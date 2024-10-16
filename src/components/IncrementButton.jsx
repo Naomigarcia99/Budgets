@@ -6,15 +6,14 @@ const IncrementButton = ({ value, onChange }) => {
   };
 
   return (
-    <div>
       <button
-        className="hover:bg-green-300 rounded-full btn-xs"
+        className="active:bg-green-400 btn-xs btn-circle"
         onClick={handleIncrement}
       >
         +
       </button>
-    </div>
   );
 };
 
 export default IncrementButton;
+  
