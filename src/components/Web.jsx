@@ -12,8 +12,8 @@ const web = () => {
   };
 
   return (
-    <div className="flex flex-col mt-16">
-      <div className="flex flex-row justify-between mb-3">
+    <div className="flex flex-col mt-10">
+      <div className="flex flex-row justify-end mb-3 space-x-2">
         <p className="font-bold text-black">Nombre de pàgines</p>
         <DecrementButton
           onChange={(newValue) => updateInputValue("input1", newValue)}
@@ -23,14 +23,14 @@ const web = () => {
           type="number"
           value={inputValues.input1 || 1}
           onChange={(e) => handleInputChange(e, "input1")}
-          className="input input-bordered input-xs w-1/4 [&::-webkit-inner-spin-button]:appearance-none"
+          className="input input-bordered input-xs w-12 text-center font-bold [&::-webkit-inner-spin-button]:appearance-none"
         />
         <IncrementButton
           onChange={(newValue) => updateInputValue("input1", newValue)}
           value={inputValues.input1 || 1}
         ></IncrementButton>
       </div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-end space-x-2">
         <p className="font-bold text-black">Nombre de llenguatges</p>
         <DecrementButton
           onChange={(newValue) => updateInputValue("input2", newValue)}
@@ -40,7 +40,7 @@ const web = () => {
           type="number"
           value={inputValues.input2 || 1}
           onChange={(e) => handleInputChange(e, "input2")}
-          className="input input-bordered input-xs w-1/4 [&::-webkit-inner-spin-button]:appearance-none"
+          className="input input-bordered input-xs w-12 text-center font-bold [&::-webkit-inner-spin-button]:appearance-none"
         />
         <IncrementButton
           onChange={(newValue) => updateInputValue("input2", newValue)}

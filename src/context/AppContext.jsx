@@ -50,6 +50,9 @@ export const AppProvider = ({ children }) => {
     setTotalBudget(totalBudget);
   }, [selectedProducts, inputValues]);
 
+  const isWebVisible = (productId) =>
+    selectedProducts.find((item) => item.id === productId);
+
   return (
     <AppContext.Provider
       value={{
@@ -59,6 +62,7 @@ export const AppProvider = ({ children }) => {
         totalBudget,
         inputValues,
         updateInputValue,
+        isWebVisible,
       }}
     >
       {children}
