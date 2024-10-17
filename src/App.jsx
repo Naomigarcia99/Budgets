@@ -1,17 +1,19 @@
 import React from "react";
 import "./assets/App.css";
-import Product from "./components/Product";
-import { Header } from "./components/Header";
 import { AppProvider } from "./context/AppContext";
-import Budget from "./components/Budget";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import MainPage from "./pages/BudgetPage";
 
 function App() {
+
   return (
     <>
       <AppProvider>
-        <Header></Header>
-        <Product></Product>
-        <Budget></Budget>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/app" element={<MainPage />} />
+        </Routes>
       </AppProvider>
     </>
   );
