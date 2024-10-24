@@ -6,7 +6,7 @@ export default function Budget() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-black text-right">
+      <h2 className="text-3xl font-bold text-black text-right mt-4">
         Preu presupostat: {totalBudget}€
       </h2>
     </div>

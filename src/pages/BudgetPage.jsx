@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import Budget from "../components/Budget";
 import { Link } from "react-router-dom";
 import Home from "../assets/home.png";
+import BudgetRequest from "../components/BudgetRequest";
 
 const MainPage = () => {
   return (
@@ -18,6 +19,7 @@ const MainPage = () => {
       </Link>
       <Product />
       <Budget />
+      <BudgetRequest />
     </div>
   );
 };
