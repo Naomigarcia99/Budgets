@@ -5,6 +5,7 @@ import Budget from "../components/Budget";
 import { Link } from "react-router-dom";
 import Home from "../assets/home.png";
 import BudgetRequest from "../components/BudgetRequest";
+import BudgetInProgress from "../components/BudgetInProgress";
 
 const MainPage = () => {
   return (
@@ -20,6 +21,7 @@ const MainPage = () => {
       <Product />
       <Budget />
       <BudgetRequest />
+      <BudgetInProgress />
     </div>
   );
 };

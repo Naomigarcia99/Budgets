@@ -22,7 +22,7 @@ const Product = () => {
                 : "border-2 border-slate-50"
             }`}
           >
-            <div className="flex flex-col sm:flex-row justify-between space-x-10">
+            <div className="flex flex-col sm:flex-row justify-between space-x-10 space-y-3">
               <div className="flex flex-col text-left justify-center space-y-3">
                 <h2 className=" text-2xl font-bold text-black">{item.title}</h2>
                 <p className="font-bold text-black">{item.description}</p>

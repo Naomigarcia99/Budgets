@@ -11,15 +11,24 @@ export const AppProvider = ({ children }) => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [totalBudget, setTotalBudget] = useState(0);
   const [inputValues, setInputValues] = useState({});
+  const [budgets, setBudgets] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefon, setTelefon] = useState("");
 
-  const toggleProduct = (productId, productPrice) => {
+  const toggleProduct = (productId, productPrice, productTitle) => {
     setSelectedProducts((prevSelected) => {
       if (prevSelected.find((item) => item.id === productId)) {
         return prevSelected.filter((item) => item.id !== productId);
       } else {
         return [
           ...prevSelected,
-          { id: productId, price: productPrice, isCheked: true },
+          {
+            id: productId,
+            title: productTitle,
+            price: productPrice,
+            isCheked: true,
+          },
         ];
       }
     });
@@ -53,16 +62,48 @@ export const AppProvider = ({ children }) => {
   const isWebVisible = (productId) =>
     selectedProducts.find((item) => item.id === productId);
 
+  const handleSaveBudget = () => {
+    const newBudget = {
+      name,
+      email,
+      telefon,
+      services: selectedProducts.map((product) => ({
+        title: product.title,
+        inputs: product.id === "3" ? inputValues : null,
+      })),
+      total: totalBudget,
+    };
+
+    setBudgets([...budgets, newBudget]);
+
+    setName("");
+    setEmail("");
+    setTelefon("");
+    setSelectedProducts([]);
+    setInputValues({});
+    setTotalBudget(0);
+  };
+
   return (
     <AppContext.Provider
       value={{
         data,
         selectedProducts,
+        setSelectedProducts,
         toggleProduct,
         totalBudget,
+        setTotalBudget,
         inputValues,
         updateInputValue,
         isWebVisible,
+        budgets,
+        handleSaveBudget,
+        name,
+        setName,
+        email,
+        setEmail,
+        telefon,
+        setTelefon,
       }}
     >
       {children}
