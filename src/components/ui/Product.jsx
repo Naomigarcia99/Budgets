@@ -1,6 +1,6 @@
 import React from "react";
-import Checkbox from "./checkbox";
-import { useAppContext } from "../context/AppContext";
+import Checkbox from "../form/Checkbox";
+import { useAppContext } from "../../context/AppContext";
 import Web from "./Web";
 
 const Product = () => {

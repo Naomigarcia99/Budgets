@@ -1,7 +1,7 @@
 import React from "react";
-import { useAppContext } from "../context/AppContext";
-import IncrementButton from "./IncrementButton";
-import DecrementButton from "./DecrementButton";
+import { useAppContext } from "../../context/AppContext";
+import IncrementButton from "../form/IncrementButton";
+import DecrementButton from "../form/DecrementButton";
 
 const web = () => {
   const { inputValues, updateInputValue } = useAppContext();

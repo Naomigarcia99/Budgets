@@ -1,11 +1,11 @@
 import React from "react";
-import Product from "../components/Product";
-import { Header } from "../components/Header";
-import Budget from "../components/Budget";
+import Product from "../components/ui/Product";
+import { Header } from "../components/ui/Header";
+import Budget from "../components/ui/Budget";
 import { Link } from "react-router-dom";
-import Home from "../assets/home.png";
-import BudgetRequest from "../components/BudgetRequest";
-import BudgetInProgress from "../components/BudgetInProgress";
+import Home from "../assets/images/home.png";
+import BudgetRequest from "../components/form/BudgetRequest";
+import BudgetInProgress from "../components/ui/BudgetInProgress";
 
 const MainPage = () => {
   return (

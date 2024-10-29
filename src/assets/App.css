@@ -10,7 +10,7 @@
 }
 
 .container {
-  background-image: url("../assets/header.png");
+  background-image: url("../assets/images/header.png");
   background-size: cover;
   border-radius: 25px;
   width: max-content;

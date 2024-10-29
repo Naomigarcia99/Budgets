@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import calculate from "../assets/calculate.png";
+import calculate from "../assets/images/calculate.png";
 
 export default function Home() {
   return (
