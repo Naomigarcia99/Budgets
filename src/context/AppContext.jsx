@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
   const [totalBudget, setTotalBudget] = useState(0);
   const [inputValues, setInputValues] = useState({});
   const [budgets, setBudgets] = useState([]);
+  const [originalBudgets, setOriginalBudgets] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
@@ -78,6 +79,7 @@ export const AppProvider = ({ children }) => {
     };
 
     setBudgets([...budgets, newBudget]);
+    setOriginalBudgets([...originalBudgets, newBudget]);
 
     setName("");
     setEmail("");
@@ -130,6 +132,7 @@ export const AppProvider = ({ children }) => {
         CloseModal2,
         openModal1,
         openModal2,
+        originalBudgets,
       }}
     >
       {children}

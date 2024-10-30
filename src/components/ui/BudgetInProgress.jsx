@@ -2,6 +2,7 @@ import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import AlphabetButton from "../form/AlphabetButton";
 import DateButton from "../form/DateButton";
+import RestartOrderButton from "../form/RestartOrderButton";
 
 const BudgetInProgress = () => {
   const { budgets } = useAppContext();
@@ -14,6 +15,7 @@ const BudgetInProgress = () => {
       <div className="flex justify-end space-x-2 mb-3">
         <AlphabetButton />
         <DateButton />
+        <RestartOrderButton />
       </div>
       <div className="flex flex-col items-center">
         {budgets.length > 0 ? (
