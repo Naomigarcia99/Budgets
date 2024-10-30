@@ -3,6 +3,7 @@ import { useAppContext } from "../../context/AppContext";
 import AlphabetButton from "../form/AlphabetButton";
 import DateButton from "../form/DateButton";
 import RestartOrderButton from "../form/RestartOrderButton";
+import SearchButton from "../form/SearchButton";
 
 const BudgetInProgress = () => {
   const { budgets } = useAppContext();
@@ -13,6 +14,7 @@ const BudgetInProgress = () => {
         Pressupostos en curs:
       </h2>
       <div className="flex justify-end space-x-2 mb-3">
+        <SearchButton />
         <AlphabetButton />
         <DateButton />
         <RestartOrderButton />
