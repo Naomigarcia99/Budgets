@@ -12,13 +12,13 @@ const MainPage = () => {
   return (
     <div>
       <Header />
-      <Link to="/">
-        <div className="flex justify-start">
-          <button className="btn btn-circle mb-2">
+      <div className="flex items-start">
+        <button className="btn btn-circle mb-2">
+          <Link to="/">
             <img src={Home} width={30} />
-          </button>
-        </div>
-      </Link>
+          </Link>
+        </button>
+      </div>
       <AnnualBudget />
       <Product />
       <Budget />
