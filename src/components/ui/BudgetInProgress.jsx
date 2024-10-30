@@ -1,17 +1,19 @@
 import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import AlphabetButton from "../form/AlphabetButton";
+import DateButton from "../form/DateButton";
 
 const BudgetInProgress = () => {
-  const { budgets, AlphabetSort } = useAppContext();
+  const { budgets } = useAppContext();
 
   return (
     <div>
       <h2 className="flex justify-start font-bold text-black text-2xl mt-16 mb-5">
         Pressupostos en curs:
       </h2>
-      <div className="flex justify-end">
+      <div className="flex justify-end space-x-2 mb-3">
         <AlphabetButton />
+        <DateButton />
       </div>
       <div className="flex flex-col items-center">
         {budgets.length > 0 ? (

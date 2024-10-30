@@ -73,6 +73,7 @@ export const AppProvider = ({ children }) => {
         title: product.title,
         inputs: product.id === "3" ? inputValues : null,
       })),
+      date: new Date().toISOString(),
       total: totalBudget,
     };
 
