@@ -1,14 +1,18 @@
 import React from "react";
 import { useAppContext } from "../../context/AppContext";
+import AlphabetButton from "../form/AlphabetButton";
 
 const BudgetInProgress = () => {
-  const { budgets } = useAppContext();
+  const { budgets, AlphabetSort } = useAppContext();
 
   return (
     <div>
       <h2 className="flex justify-start font-bold text-black text-2xl mt-16 mb-5">
         Pressupostos en curs:
       </h2>
+      <div className="flex justify-end">
+        <AlphabetButton />
+      </div>
       <div className="flex flex-col items-center">
         {budgets.length > 0 ? (
           budgets.map((budget, index) => (

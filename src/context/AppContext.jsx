@@ -115,6 +115,7 @@ export const AppProvider = ({ children }) => {
         updateInputValue,
         isWebVisible,
         budgets,
+        setBudgets,
         handleSaveBudget,
         name,
         setName,
