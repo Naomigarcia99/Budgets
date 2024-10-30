@@ -2,6 +2,8 @@ import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import IncrementButton from "../form/IncrementButton";
 import DecrementButton from "../form/DecrementButton";
+import Modal1 from "../form/Modal1";
+import Modal2 from "../form/Modal2";
 
 const web = () => {
   const { inputValues, updateInputValue } = useAppContext();
@@ -14,7 +16,8 @@ const web = () => {
   return (
     <div className="flex flex-col mt-10">
       <div className="flex flex-row justify-end mb-3 space-x-2">
-        <p className="font-bold text-black">Nombre de pàgines</p>
+        <Modal1 />
+        <span className="font-bold text-black">Nombre de pàgines</span>
         <DecrementButton
           onChange={(newValue) => updateInputValue("input1", newValue)}
           value={inputValues.input1 || 0}
@@ -31,7 +34,8 @@ const web = () => {
         ></IncrementButton>
       </div>
       <div className="flex flex-row justify-end space-x-2">
-        <p className="font-bold text-black">Nombre de llenguatges</p>
+        <Modal2 />
+        <span className="font-bold text-black">Nombre de llenguatges</span>
         <DecrementButton
           onChange={(newValue) => updateInputValue("input2", newValue)}
           value={inputValues.input2 || 0}

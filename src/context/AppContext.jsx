@@ -15,6 +15,8 @@ export const AppProvider = ({ children }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
+  const [openModal1, setOpenModal1] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
 
   const toggleProduct = (productId, productPrice, productTitle) => {
     setSelectedProducts((prevSelected) => {
@@ -84,6 +86,22 @@ export const AppProvider = ({ children }) => {
     setTotalBudget(0);
   };
 
+  const ShowModal1 = () => {
+    setOpenModal1(true);
+  };
+
+  const CloseModal1 = () => {
+    setOpenModal1(false);
+  };
+
+  const ShowModal2 = () => {
+    setOpenModal2(true);
+  };
+
+  const CloseModal2 = () => {
+    setOpenModal2(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -104,6 +122,12 @@ export const AppProvider = ({ children }) => {
         setEmail,
         telefon,
         setTelefon,
+        ShowModal1,
+        ShowModal2,
+        CloseModal1,
+        CloseModal2,
+        openModal1,
+        openModal2,
       }}
     >
       {children}
