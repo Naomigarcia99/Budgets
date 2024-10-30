@@ -4,7 +4,7 @@ import { useAppContext } from "../../context/AppContext";
 import Web from "./Web";
 
 const Product = () => {
-  const { data, selectedProducts, isWebVisible } = useAppContext();
+  const { data, selectedProducts, isWebVisible, isAnnual } = useAppContext();
 
   return (
     <div className=" flex flex-col items-center">
@@ -12,6 +12,8 @@ const Product = () => {
         const isChecked = selectedProducts.some(
           (product) => product.id === item.id
         );
+
+        const Price = isAnnual ? item.price * 0.8 : item.price;
 
         return (
           <div
@@ -29,7 +31,12 @@ const Product = () => {
               </div>
 
               <div className="flex flex-col justify-center">
-                <h1 className="font-bold text-black">{item.price}€</h1>
+                {isAnnual && (
+                  <span className="font-bold text-orange-400 ">
+                    Ahorra un 20%
+                  </span>
+                )}
+                <h1 className="font-bold text-black">{Price}€</h1>
               </div>
 
               <div className="flex flex-col justify-center">

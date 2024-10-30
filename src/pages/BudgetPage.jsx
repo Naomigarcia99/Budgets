@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Home from "../assets/images/home.png";
 import BudgetRequest from "../components/form/BudgetRequest";
 import BudgetInProgress from "../components/ui/BudgetInProgress";
+import AnnualBudget from "../components/form/AnnualBudget";
 
 const MainPage = () => {
   return (
@@ -18,6 +19,7 @@ const MainPage = () => {
           </button>
         </div>
       </Link>
+      <AnnualBudget />
       <Product />
       <Budget />
       <BudgetRequest />

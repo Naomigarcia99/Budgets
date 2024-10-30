@@ -18,6 +18,7 @@ export const AppProvider = ({ children }) => {
   const [telefon, setTelefon] = useState("");
   const [openModal1, setOpenModal1] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(false);
 
   const toggleProduct = (productId, productPrice, productTitle) => {
     setSelectedProducts((prevSelected) => {
@@ -46,7 +47,9 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const totalBudget = selectedProducts.reduce((total, product) => {
-      let updatedTotal = total + product.price;
+      const Price = isAnnual ? product.price * 0.8 : product.price;
+
+      let updatedTotal = total + Price;
 
       if (product.id === "3") {
         const inputs = inputValues || { input1: 1, input2: 1 };
@@ -60,7 +63,7 @@ export const AppProvider = ({ children }) => {
     }, 0);
 
     setTotalBudget(totalBudget);
-  }, [selectedProducts, inputValues]);
+  }, [selectedProducts, inputValues, isAnnual]);
 
   const isWebVisible = (productId) =>
     selectedProducts.find((item) => item.id === productId);
@@ -105,6 +108,10 @@ export const AppProvider = ({ children }) => {
     setOpenModal2(false);
   };
 
+  const AnnualDiscount = () => {
+    setIsAnnual((prev) => !prev);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -133,6 +140,8 @@ export const AppProvider = ({ children }) => {
         openModal1,
         openModal2,
         originalBudgets,
+        isAnnual,
+        AnnualDiscount,
       }}
     >
       {children}
